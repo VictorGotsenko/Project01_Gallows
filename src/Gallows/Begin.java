@@ -9,8 +9,6 @@ public class Begin {
     private static Set<Character> chArrayWrongChars = new LinkedHashSet<>();       // массив для неправ.введённых букв
 
 
-
-
     public static void main(String[] args) throws IOException {
     sFilePath = ".\\src\\Gallows\\Dictions.txt";
     String s;
