@@ -25,7 +25,8 @@ public class GuessTheWord {
     public static int NumLine () throws IOException {
         int iCountLines = 0;
         int iLenghtWord = 1;
-        String s; // temp var
+        String s="а"; // temp var
+        char ch;
         File file = new File(sFilePath);
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
@@ -36,9 +37,9 @@ public class GuessTheWord {
                 iLenghtWord = s.length();
             }
             for (int i = 0; i < s.length(); i++) {
-                char ch = s.charAt(i);
+                ch = s.charAt(i);
                 if (!(ch >= 'а' && ch <= 'я')){   // ||(ch == 'ё')
-                    if (ch == 'ё') break;
+                    if (ch == 'ё' || ch == '-' ) break;
                     System.out.println("Файл словаря содержит недопустимое слово из не русских букв: " + s);
                     System.out.println("Работа программы завершена");
                     System.exit(0);
@@ -81,10 +82,6 @@ public class GuessTheWord {
         fr.close();
         return sGuessTheWord;
     }
-
-
-
-
 }
 
 
